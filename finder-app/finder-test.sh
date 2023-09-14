@@ -34,7 +34,7 @@ rm -rf "${WRITEDIR}"
 # create $WRITEDIR if not assignment1
 assignment=`cat ../conf/assignment.txt`
 echo "1) $assignment" 
-if [ $assignment = 'assignment1' ]
+if [ $assignment = 'assignment2' ]
 then
     echo "2) $WRITEDIR" 
 	mkdir -p "$WRITEDIR"
@@ -56,7 +56,7 @@ fi
 for i in $( seq 1 $NUMFILES)
 do
     echo "$WRITEDIR/${username}$i.txt"
-	./writer.sh "$WRITEDIR/${username}$i.txt" "$WRITESTR"
+	./writer "$WRITEDIR/${username}$i.txt" "$WRITESTR"
 done
 
 OUTPUTSTRING=$(./finder.sh "$WRITEDIR" "$WRITESTR")
